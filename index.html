@@ -8,10 +8,12 @@
 <body>
     <button id="buttontest" type="submit">APERTE-ME</button>
     <script>
+        console.log("INICIADO SCRIPT")
         if (window.testRunner) {
             testRunner.dumpAsText();
             testRunner.waitUntilDone();
         }
+        console.log("MEIO SCRIPT")
         const elementButtonTest = document.getElementById("buttontest");
         console.log(elementButtonTest)
 
@@ -41,6 +43,7 @@
                     testRunner.notifyDone();
             }, 0);
         })
+        console.log("FINALIZADO SCRIPT")
     </script>
 </body>
 </html>
