@@ -19,7 +19,19 @@
                 document.fonts.add(A);
                 void A.loaded;
 
+                function logToPC(message) {
+                    try {
+                        var xhr = new XMLHttpRequest();
+                        // Substitua pelo IP do seu PC e a porta configurada no Apache
+                        xhr.open("GET", "http://192.168.1.3:3000/bot/test?data=" + encodeURIComponent(message), true);
+                        xhr.send();
+                    } catch(e) {
+                        // Fallback caso a própria requisição falhe
+                    }
+                }
+
                 let fired = false;
+                logToPC("TESTE PS5")
                 Object.defineProperty(FontFace.prototype, 'then', {
                     configurable: true,
                     get() {
